@@ -1,0 +1,180 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body::-webkit-scrollbar {
+	display: none;
+}
+
+.iPhone__wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.iPhone_header {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	margin-top: 15vh;
+}
+
+.iPhone_header-content {
+	width: 90%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.iPhone_header-content h1 {
+	font-size: 4rem;
+	font-weight: 600;
+}
+
+.iPhone_header-content h4 {
+	font-size: 1.8rem;
+	font-weight: 500;
+}
+
+/* video section */
+.iPhone_video-wrapper {
+	display: flex;
+	margin-top: 4%;
+	width: 100%;
+	justify-content: center;
+}
+
+.iPhone_video {
+	width: 100%;
+	border-radius: 0;
+	animation: zoom-out linear forwards;
+	animation-timeline: view();
+}
+
+.iPhone_video video {
+	height: 70vh;
+	width: 100%;
+	object-fit: cover;
+	animation: border linear forwards;
+	animation-timeline: view();
+}
+
+/*
+STATUS SECTION
+*/
+.iPhone_getToKnow-wrapper {
+	margin-top: 8%;
+	display: flex;
+	width: 100%;
+	justify-content: center;
+}
+
+.getToKnow-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+}
+
+.getToKnow-content h1 {
+	font-size: 3.5rem;
+	margin-left: 5%;
+}
+
+.getToKnow-status {
+	display: flex;
+	margin: 50px 0 100px 0px;
+	overflow-x: auto;
+}
+
+.getToKnow-status {
+	padding-left: 100px;
+}
+
+.getToKnow-status::-webkit-scrollbar {
+	display: none;
+}
+
+.getToKnow-status {
+	opacity: 0;
+	animation: fade-in linear forwards;
+	animation-timeline: view(100px -100px);
+	animation-range: entry;
+}
+
+@media screen and (max-width: 1100px) {
+}
+
+@media screen and (max-width: 770px) {
+	.iPhone_header {
+		margin-top: 10vh;
+	}
+
+	.iPhone_header-content h1 {
+		font-size: 3rem;
+		font-weight: 500;
+	}
+
+	.iPhone_header-content h4 {
+		font-size: 1.5rem;
+		font-weight: 400;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.iPhone_header {
+		margin-top: 8vh;
+	}
+
+	.iPhone_header-content h1 {
+		font-size: 2rem;
+		font-weight: 500;
+	}
+
+	.iPhone_header-content h4 {
+		font-size: 1.2rem;
+		font-weight: 400;
+	}
+}
+
+@media screen and (max-width: 380px) {
+	.iPhone_header {
+		margin-top: 8vh;
+	}
+
+	.iPhone_header-content h1 {
+		font-size: 1.8rem;
+		font-weight: 500;
+	}
+
+	.iPhone_header-content h4 {
+		font-size: 1rem;
+		font-weight: 400;
+	}
+}
+
+@keyframes zoom-out {
+	50% {
+		width: 100%;
+	}
+	100% {
+		width: 85%;
+	}
+}
+
+@keyframes border {
+	50% {
+		border-radius: 0px;
+	}
+	80%,
+	100% {
+		border-radius: 75px;
+	}
+}
+
+@keyframes fade-in {
+	to {
+		opacity: 1;
+	}
+}
