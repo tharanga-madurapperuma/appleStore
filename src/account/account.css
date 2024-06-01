@@ -1,0 +1,130 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+custom-nav {
+	position: fixed;
+	top: 0;
+}
+
+body::-webkit-scrollbar {
+	display: none;
+}
+
+.sign__wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	width: 100%;
+}
+
+.signup__form {
+	display: flex;
+	flex-direction: column;
+	padding: 50px;
+	border-radius: 10px;
+	width: 25%;
+	height: 40vh;
+	overflow-y: scroll;
+}
+
+.sign__form {
+	display: flex;
+	flex-direction: column;
+	padding: 50px;
+	border-radius: 10px;
+	width: 25%;
+}
+
+.signup__form::-webkit-scrollbar {
+	display: none;
+}
+
+.sign__form form {
+	display: flex;
+	flex-direction: column;
+}
+
+.sign__form form label {
+	font-size: 0.8rem;
+	margin: 20px 0 5px 0;
+	color: rgb(102, 102, 102);
+	font-weight: 500;
+}
+
+.sign__form form input::placeholder {
+	color: var(--apple-gray);
+}
+
+.sign__form form h2 {
+	font-size: 1.2rem;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.sign__form form input {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid rgb(150, 150, 150);
+	border-radius: 5px;
+}
+
+.sign__form form div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.sign__form form a {
+	color: #06c;
+	font-size: 0.8rem;
+	margin: 20px 0 10px 0;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.sign__form form button {
+	width: auto;
+	padding: 10px 20px;
+	border: none;
+	background-color: #06c;
+	color: #fff;
+	border-radius: 8px;
+	margin-top: 10px;
+	cursor: pointer;
+}
+
+.bubble {
+	position: absolute;
+	top: -150px;
+	left: -150px;
+	width: 500px;
+	height: 500px;
+	background-image: linear-gradient(
+		to right,
+		rgb(20, 9, 227),
+		rgb(238, 11, 241)
+	);
+	border-radius: 100px;
+	filter: blur(200px);
+	-webkit-filter: blur(200px);
+}
+
+.bubble2 {
+	position: absolute;
+	bottom: -150px;
+	right: -150px;
+	width: 500px;
+	height: 500px;
+	background-image: linear-gradient(
+		to right,
+		rgb(9, 180, 227),
+		rgb(37, 3, 189)
+	);
+	border-radius: 100px;
+	filter: blur(200px);
+	-webkit-filter: blur(200px);
+}
