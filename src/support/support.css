@@ -1,0 +1,274 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body::-webkit-scrollbar {
+	display: none;
+}
+
+.support-firstSection {
+	display: flex;
+	justify-content: center;
+}
+
+.firstSection-image {
+	margin-top: 7.1vh;
+	width: 100%;
+}
+
+.firstSection-image img {
+	width: 100%;
+	height: 40vh;
+	object-fit: cover;
+}
+
+.support_secondSection {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.support_secondSection h1 {
+	font-size: 4rem;
+	font-weight: 500;
+	margin-top: 10%;
+}
+
+.secondSection-devices {
+	margin-top: 5%;
+	width: 80%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.secondSection-devices div {
+	margin: 0 3%;
+	margin-bottom: 5%;
+	text-align: center;
+}
+
+.secondSection-devices p {
+	margin-top: 5px;
+}
+
+.secondSection-devices img {
+	margin-top: 5px;
+	width: 100%;
+	height: 10vh;
+}
+
+.support-cardSection {
+	display: flex;
+	width: 100%;
+}
+
+.cardSection-cards {
+	display: 70%;
+	grid-template-columns: repeat(3, 1fr);
+	margin-bottom: 15%;
+	display: flex;
+}
+
+.cardSection-cards div {
+	display: flex;
+	flex-direction: column;
+	background-color: rgb(245, 245, 245);
+	margin: 10px;
+	height: 180px;
+	width: 300px;
+	justify-content: center;
+	align-items: center;
+	color: var(--apple-blue);
+	border-radius: 20px;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.cardSection-cards div img {
+	width: 80px;
+}
+
+.support_youtube {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	background-color: rgb(248, 248, 248);
+}
+
+.youtube-wrapper {
+	width: 60%;
+	height: auto;
+}
+
+.youtube-top,
+.youtube-bottom {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 50px;
+	padding: 20px 30px 0 30px;
+	background-color: #fff;
+	border-radius: 30px;
+	text-align: center;
+}
+
+.youtube-top h3,
+.youtube-bottom h3 {
+	font-size: 2rem;
+	margin: 30px;
+}
+
+.youtube-top a,
+.youtube-bottom a {
+	text-decoration: none;
+	color: var(--apple-blue);
+	margin: 20px 0 50px 0;
+}
+
+.youtube-top img {
+	width: 100%;
+}
+
+.youtube-bottom img {
+	width: 90%;
+	object-fit: cover;
+}
+
+.getSupport-wrapper {
+	width: 100%;
+	display: flex;
+	height: auto;
+	padding-bottom: 50px;
+}
+
+.getSupportLeft {
+	background-color: #ffffff;
+	width: 66%;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 55vh;
+	position: relative;
+}
+
+.getSupportRight {
+	background-color: #fdfdfd;
+	width: 33%;
+	margin-left: 1%;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 55vh;
+	position: relative;
+}
+
+.getSupportLeft h1,
+.getSupportRight h1 {
+	margin-top: 50px;
+	z-index: 5;
+}
+
+.getSupportLeft p,
+.getSupportRight p {
+	margin: 30px 0 20px 0;
+	font-size: 0.9rem;
+}
+
+.getSupportLeft button {
+	background-color: var(--apple-blue);
+	color: var(--apple-white);
+	padding: 10px 20px;
+	border: none;
+	border-radius: 20px;
+	cursor: pointer;
+	margin-bottom: 20px;
+	width: 15%;
+}
+
+.getSupportRight a {
+	color: var(--apple-blue);
+	font-size: 0.9rem;
+	margin-bottom: 20px;
+	z-index: 5;
+}
+
+.getSupportLeft img {
+	object-fit: cover;
+	height: 50%;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+}
+
+.getSupportRight img {
+	height: auto;
+	width: 55%;
+	margin-top: 10px;
+	object-fit: cover;
+	position: absolute;
+	bottom: 0;
+	z-index: 0;
+}
+
+.apple-care-and-trade {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 50px;
+	background-color: #fff;
+	border-radius: 30px;
+	text-align: center;
+	width: 60%;
+	height: auto;
+}
+
+.apple-care-and-trade h3 {
+	font-size: 2rem;
+	margin: 30px;
+}
+
+.apple-care-and-trade a {
+	text-decoration: none;
+	color: var(--apple-blue);
+	margin: 20px 0 50px 0;
+}
+
+.apple-care-and-trade img {
+	width: 100%;
+	object-fit: cover;
+	border-radius: 30px;
+}
+
+.normal-text {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 50px;
+	background-color: #fff;
+	padding: 50px;
+	border-radius: 30px;
+	text-align: center;
+	width: 54%;
+	height: auto;
+}
+
+.normal-text h3 {
+	font-size: 1.5rem;
+	font-weight: 600;
+	margin-bottom: 15px;
+}
+
+.normal-text p {
+	font-size: 0.9rem;
+}
+
+@media screen and (max-width: 1100px) {
+	.firstSection-image {
+		margin-top: 5.1vh;
+	}
+}
