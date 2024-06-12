@@ -14,19 +14,20 @@
     <div class="sign__wrapper">
         <custom-nav class="firstSection-navBar"></custom-nav>
         <div class="sign__form">
-            <form action="">
+            <form action="./account.php" method="POST">
                 <h2>SIGN IN</h2>
                 <label>Email</label>
-                <input type="email" placeholder="Enter your email here" required="required">
+                <input type="email" placeholder="Enter your email here" required="required">    
                 <label>Password</label>
                 <input type="password" placeholder="Enter the password" required="required">
                 <div>
                     <a href="signup.html">New here? let's create an account</a>
-                    <button>sign in</button>
+                    <button name="signInBtn">sign in</button>
                 </div>
             </form>
         </div>
     </div>
+    <script src="https://kit.fontawesome.com/a79721002c.js" crossorigin="anonymous"></script>
     <script src="../../Components/customNav.js"></script>
 </body>
 </html>
