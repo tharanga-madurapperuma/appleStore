@@ -31,6 +31,10 @@ body::-webkit-scrollbar {
 	margin-top: 13%;
 	animation-name: text-focus-in;
 	animation-duration: 3s;
+	opacity: 0;
+	animation: fade-in linear forwards;
+	animation-timeline: view(0px 300px);
+	animation-range: entry;
 }
 
 .firstSection-icons div {
@@ -63,25 +67,25 @@ body::-webkit-scrollbar {
 	text-align: center;
 	width: 80%;
 	color: var(--apple-white);
+	opacity: 0;
+	animation: fade-in linear forwards;
+	animation-timeline: view(0px 300px);
+	animation-range: entry;
 }
 
 .firstSection-content h1 {
-	margin-top: 10%;
+	margin: 10% 0;
 	font-size: 6rem;
 	font-weight: 700;
 	line-height: 7rem;
-	animation-name: text-focus-in;
-	animation-duration: 6s;
 }
 
 .firstSection-content p {
-	font-size: 1.5rem;
-	font-weight: 400;
-	margin: 2% 0 8% 0;
-	padding: 0 8%;
+	font-size: 1.2rem;
+	font-weight: 300;
+	margin-bottom: 10%;
+	padding: 0 20%;
 	line-height: 2rem;
-	animation-name: text-focus-in;
-	animation-duration: 9s;
 }
 
 .home__secondSection-wrapper {
@@ -145,6 +149,7 @@ body::-webkit-scrollbar {
 	z-index: -1;
 	position: relative;
 	overflow-x: hidden;
+	z-index: 5;
 }
 
 .myButton {
@@ -166,6 +171,10 @@ body::-webkit-scrollbar {
 	column-gap: 10px;
 	row-gap: 10px;
 	margin: 5px 10px;
+}
+
+custom-background {
+	background-color: var(--apple-black);
 }
 
 @media screen and (max-width: 1100px) {
@@ -334,23 +343,8 @@ body::-webkit-scrollbar {
 	}
 }
 
-@keyframes text-focus-in {
-	0% {
-		opacity: 0;
-	}
-
-	25% {
-		opacity: 0;
-	}
-	50% {
-		opacity: 0.25;
-	}
-
-	75% {
-		opacity: 0.6;
-	}
-
-	100% {
+@keyframes fade-in {
+	to {
 		opacity: 1;
 	}
 }

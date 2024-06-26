@@ -1,2 +1,2 @@
-# appleStore
-This is a website for a apple store
+# appleShop
+This is a website for a apple shop

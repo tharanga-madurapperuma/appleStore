@@ -1,3 +1,5 @@
+var accountLogged = true;
+
 class CustomNav extends HTMLElement{
     connectedCallback(){
         this.innerHTML = `
@@ -10,10 +12,9 @@ class CustomNav extends HTMLElement{
                 <h3><a href="../../src/iPad/iPad.html">iPad</a></h3>
                 <h3><a href="../../src/iPhone/iPhone.html">iPhone</a></h3>
                 <h3><a href="../../src/watch/watch.html">Watch</a></h3>
-                <h3><a>AirPods</a></h3>
-                <h3><a>Support</a></h3>
+                <h3><a href="../../src/support/support.html">Support</a></h3>
             </div>
-            <i class="fa-solid fa-user"></i>
+            <i class="fa-solid fa-user" onclick="userAccount()"></i>
         </div>
         `
     }
@@ -31,5 +32,11 @@ function menuClick(){
     else if(displayProperty.display == "block" || displayProperty.display == "flex"){
         document.querySelector(".firstSection-navBar").style.height = "5vh";
         document.querySelector(".navBarWrapper > div").style.display = "none";
+    }
+}
+
+function userAccount(){
+    if(accountLogged){
+        window.location.href = "../../src/account/signin.html";
     }
 }
