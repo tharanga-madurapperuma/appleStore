@@ -29,52 +29,67 @@ $data = $collection->find();
         </div>
         <div class="shop_content">
             <?php
-            foreach ($data as $document) {
-                echo "<div class='shop_container'>";
-                echo htmlspecialchars($document['iPad']);
+            foreach ($data as $document) : ?>
+                <div class='shop_container'>
+                    <?php echo htmlspecialchars($document['iPad']); ?>
 
-                echo "<div class='shop-topImage'>";
-                echo "<img src ='" . htmlspecialchars($document['imgSrc']) . "'>";
-                echo "</div>";
+                    <div class='shop-topImage'>
+                        <img src='<?php echo htmlspecialchars($document['imgSrc']); ?>'>
+                    </div>
 
-                echo "<div class='shop-colors'>";
-                foreach ($document['color'] as $color) {
-                    echo "<div style=" . "background-color:" . $color . "></div>";
-                }
-                echo "</div>";
+                    <div class='shop-colors'>
+                        <?php foreach ($document['color'] as $color) : ?>
+                            <div style='background-color:<?php echo $color; ?>'></div>
+                        <?php endforeach; ?>
+                    </div>
 
-                echo "<div class='shop-spec'>";
-                echo "<div>";
-                echo "<span>" . htmlspecialchars($document['chip']) . "</span>" . "<br>";
-                echo htmlspecialchars($document['cpu']) . "<br>";
-                echo htmlspecialchars($document['capacity']) . "<br>";
-                echo "</div>";
+                    <div class='shop-spec'>
+                        <div>
+                            <span><?php echo htmlspecialchars($document['chip']); ?></span><br>
+                            <?php echo htmlspecialchars($document['cpu']); ?> <br>
+                            <?php echo htmlspecialchars($document['capacity']); ?><br>
+                        </div>
 
-                echo "<div class='shop-spec-paragraph'>";
-                echo htmlspecialchars($document['display']) . "<br>";
-                echo htmlspecialchars($document['camera']) . "<br>";
-                echo htmlspecialchars($document['usb']) . "<br>";
-                echo htmlspecialchars($document['security']) . "<br>";
-                echo htmlspecialchars($document['speaker']) . "<br>";
-                echo htmlspecialchars($document['microphone']) . "<br>";
-                echo htmlspecialchars($document['wifi']) . "<br>";
-                echo htmlspecialchars($document['height']) . "<br>";
-                echo htmlspecialchars($document['width']) . "<br>";
-                echo htmlspecialchars($document['weight']) . "<br>";
-                echo "</div>";
+                        <div class='shop-spec-paragraph'>
+                            <?php echo htmlspecialchars($document['display']); ?><br>
+                            <?php echo htmlspecialchars($document['camera']); ?><br>
+                            <?php echo htmlspecialchars($document['usb']); ?><br>
+                            <?php echo htmlspecialchars($document['security']); ?><br>
+                            <?php echo htmlspecialchars($document['speaker']); ?><br>
+                            <?php echo htmlspecialchars($document['microphone']); ?><br>
+                            <?php echo htmlspecialchars($document['wifi']); ?><br>
+                            <?php echo htmlspecialchars($document['height']); ?><br>
+                            <?php echo htmlspecialchars($document['width']); ?><br>
+                            <?php echo htmlspecialchars($document['weight']); ?><br>
+                        </div>
 
-                echo "<div>";
-                echo "$" . htmlspecialchars($document['price']) . ".00<br>";
-                echo "</div>";
-                echo "</div>";
+                        <div>
+                            $<?php echo htmlspecialchars($document['price']); ?>.00<br>
+                        </div>
+                    </div>
 
-                echo "<button class='shopiPad_buyButton'>";
-                echo "Buy";
-                echo "</button>";
-
-                echo "</div>";
-            }
-            ?>
+                    <form action="./iPadCheckout.php" method="GET">
+                        <input type="hidden" name="name" value="<?php echo htmlspecialchars($document['iPad']); ?>">
+                        <input type="hidden" name="imgSrc" value="<?php echo htmlspecialchars($document['imgSrc']); ?>">
+                        <input type="hidden" name="color" value="<?php echo htmlspecialchars(json_encode($document['color'])); ?>">
+                        <input type="hidden" name="chip" value="<?php echo htmlspecialchars($document['chip']); ?>">
+                        <input type="hidden" name="cpu" value="<?php echo htmlspecialchars($document['cpu']); ?>">
+                        <input type="hidden" name="capacity" value="<?php echo htmlspecialchars($document['capacity']); ?>">
+                        <input type="hidden" name="display" value="<?php echo htmlspecialchars($document['display']); ?>">
+                        <input type="hidden" name="camera" value="<?php echo htmlspecialchars($document['camera']); ?>">
+                        <input type="hidden" name="usb" value="<?php echo htmlspecialchars($document['usb']); ?>">
+                        <input type="hidden" name="security" value="<?php echo htmlspecialchars($document['security']); ?>">
+                        <input type="hidden" name="speaker" value="<?php echo htmlspecialchars($document['speaker']); ?>">
+                        <input type="hidden" name="microphone" value="<?php echo htmlspecialchars($document['microphone']); ?>">
+                        <input type="hidden" name="wifi" value="<?php echo htmlspecialchars($document['wifi']); ?>">
+                        <input type="hidden" name="height" value="<?php echo htmlspecialchars($document['height']); ?>">
+                        <input type="hidden" name="width" value="<?php echo htmlspecialchars($document['width']); ?>">
+                        <input type="hidden" name="weight" value="<?php echo htmlspecialchars($document['weight']); ?>">
+                        <input type="hidden" name="price" value="<?php echo htmlspecialchars($document['price']); ?>">
+                        <button type="submit" class='shopiPad_buyButton'>Buy</button>
+                    </form>
+                </div>
+            <?php endforeach; ?>
         </div>
     </div>
 
