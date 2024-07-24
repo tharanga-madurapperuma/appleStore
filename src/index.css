@@ -7,6 +7,10 @@
 	--apple-blue: #06c;
 	--apple-black: #000000;
 	--apple-black-transparent: rgba(0, 0, 0, 0.75);
+	--apple-successful: #b4f3bc;
+	--apple-successful-text: #36853d;
+	--apple-error-background: #f3b4b4;
+	--apple-error-text: #c72525;
 	--x: "";
 	--y: "";
 }

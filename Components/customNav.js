@@ -1,10 +1,13 @@
-var accountLogged = true;
+// localStorage.clear();
+if (localStorage.getItem('accountLogged') === null) {
+    localStorage.setItem('accountLogged', false);
+}
 
 class CustomNav extends HTMLElement{
     connectedCallback(){
         this.innerHTML = `
         <div class="navBarWrapper">
-            <i class="fa-brands fa-apple"></i>
+            <i class="fa-brands fa-apple" onclick = "window.location.href = '../home/index.html'"></i>
             <i class="fas fa-bars" id="menuIcon" onclick = "menuClick()"></i>
             <div>
                 <h3><a href="../../src/home/index.html">Store</a></h3>
@@ -30,13 +33,15 @@ function menuClick(){
         document.querySelector(".navBarWrapper > div").style.display = "block";
     }
     else if(displayProperty.display == "block" || displayProperty.display == "flex"){
-        document.querySelector(".firstSection-navBar").style.height = "5vh";
+        document.querySelector(".firstSection-navBar").style.height = "8vh";
         document.querySelector(".navBarWrapper > div").style.display = "none";
     }
 }
 
-function userAccount(){
-    if(accountLogged){
+function userAccount() {
+    if (localStorage.getItem('accountLogged') === 'true') {
+        window.location.href = "../../src/profile/profile.php";
+    } else {
         window.location.href = "../../src/account/signin.html";
     }
 }

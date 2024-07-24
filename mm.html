@@ -1,0 +1,49 @@
+<div class="shop_content">
+    <?php
+    foreach ($data as $document) {
+        echo "<div class='shop_containerMac'>";
+
+        echo "<div class='shop-topImage'>";
+        echo "<img src ='" . htmlspecialchars($document['imgSrc']) . "'>";
+        echo "</div>";
+
+        echo "<div class='shop-colors'>";
+        foreach ($document['color'] as $color) {
+            echo "<div style=" . "background-color:" . $color . "></div>";
+        }
+        echo "</div>";
+
+        echo "<div class='shop-spec'>";
+        echo "<div>";
+        echo "<span>" . htmlspecialchars($document['chip']) . "</span>" . "<br>";
+        echo htmlspecialchars($document['cpu']) . "<br>";
+        echo htmlspecialchars($document['memory']) . "<br>";
+        echo "</div>";
+
+        echo "<div class='shop-spec-paragraph'>";
+        echo htmlspecialchars($document['gpu']) . "<br>";
+        echo htmlspecialchars($document['storage']) . "<br>";
+        echo htmlspecialchars($document['NeuralEngine']) . "<br>";
+        echo htmlspecialchars($document['display']) . "<br>";
+        echo htmlspecialchars($document['camera']) . "<br>";
+        echo htmlspecialchars($document['charginPort']) . "<br>";
+        echo htmlspecialchars($document['usb']) . "<br>";
+        echo htmlspecialchars($document['exDisplay']) . "<br>";
+        echo htmlspecialchars($document['keyboard']) . "<br>";
+        echo htmlspecialchars($document['trackpad']) . "<br>";
+        echo htmlspecialchars($document['powerAdapter']) . "<br>";
+        echo "</div>";
+
+        echo "<div>";
+        echo "$" . htmlspecialchars($document['price']) . ".00<br>";
+        echo "</div>";
+        echo "</div>";
+
+        echo "<button class='shopiPad_buyButton' onClick='buyItem()'>";
+        echo "Buy";
+        echo "</button>";
+
+        echo "</div>";
+    }
+    ?>
+</div>
