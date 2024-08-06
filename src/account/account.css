@@ -96,15 +96,16 @@ input[type="text"]:focus {
 	text-decoration: none;
 }
 
-.sign__form form button {
+.submitButton {
 	width: auto;
 	padding: 10px 20px;
 	border: none;
-	background-color: #06c;
+	background-color: rgb(0, 102, 204);
 	color: #fff;
 	border-radius: 8px;
 	margin-top: 10px;
 	cursor: pointer;
+	margin-left: 15px;
 }
 
 .bubble {

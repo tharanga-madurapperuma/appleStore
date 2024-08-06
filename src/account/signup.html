@@ -14,7 +14,7 @@
     <custom-nav class="firstSection-navBar"></custom-nav>
     <div class="sign__wrapper">
         <div class="signup__form sign__form">
-            <form action="./account.php" method="POST">
+            <form action="./account.php" method="POST" onsubmit="return validation()">
                 <h2>SIGN UP</h2>
                 <label>First Name</label>
                 <input type="text" placeholder="Enter your first name" required="required" name="firstName">
@@ -36,12 +36,13 @@
                 <input id="phone" type="tel" placeholder="Phone Number" required="required" name="phoneNumber">
                 <div>
                     <a href="signin.html">Already have an accout? Sign in</a>
-                    <button name="signUpBtn">Create Account</button>
+                    <input type="submit" name="signUpBtn" value="Create Account" class="submitButton"></button>
                 </div>
             </form>
         </div>
     </div>
     <script src="https://kit.fontawesome.com/a79721002c.js" crossorigin="anonymous"></script>
     <script src="../../Components/customNav.js"></script>
+    <script src="./account.js"></script>
 </body>
 </html>
