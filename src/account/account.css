@@ -39,7 +39,7 @@ body::-webkit-scrollbar {
 	flex-direction: column;
 	padding: 50px;
 	border-radius: 10px;
-	width: 25%;
+	width: 30%;
 }
 
 .signup__form::-webkit-scrollbar {
@@ -69,7 +69,7 @@ body::-webkit-scrollbar {
 }
 
 .sign__form form input {
-	width: 100%;
+	width: auto;
 	padding: 10px;
 	border: 1px solid rgb(150, 150, 150);
 	border-radius: 5px;
@@ -97,7 +97,7 @@ input[type="text"]:focus {
 }
 
 .submitButton {
-	width: auto;
+	width: 50% !important;
 	padding: 10px 20px;
 	border: none;
 	background-color: rgb(0, 102, 204);
@@ -105,7 +105,6 @@ input[type="text"]:focus {
 	border-radius: 8px;
 	margin-top: 10px;
 	cursor: pointer;
-	margin-left: 15px;
 }
 
 .bubble {
@@ -138,4 +137,11 @@ input[type="text"]:focus {
 	border-radius: 100px;
 	filter: blur(200px);
 	-webkit-filter: blur(200px);
+}
+
+span {
+	color: rgb(162, 12, 12);
+	font-size: 0.8rem;
+	margin-top: 5px;
+	margin-right: 5px;
 }
