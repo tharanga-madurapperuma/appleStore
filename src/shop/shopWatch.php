@@ -62,7 +62,7 @@ $data = $collection->find();
                         </div>
                     </div>
 
-                    <form action="./watchCheckout.php" method="GET">
+                    <form action="./watchCheckout.php" method="POST">
                         <input type="hidden" name="watch" value="<?php echo htmlspecialchars($document['watch']); ?>">
                         <input type="hidden" name="imgSrc" value="<?php echo htmlspecialchars($document['imgSrc']); ?>">
                         <input type="hidden" name="case" value="<?php echo htmlspecialchars(json_encode($document['case'])); ?>">

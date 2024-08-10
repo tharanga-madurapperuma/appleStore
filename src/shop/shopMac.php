@@ -66,7 +66,7 @@ $data = $collection->find();
                         </div>
                     </div>
 
-                    <form action="./macCheckout.php" method="GET">
+                    <form action="./macCheckout.php" method="POST">
                         <input type="hidden" name="imgSrc" value="<?php echo htmlspecialchars($document['imgSrc']); ?>">
                         <input type="hidden" name="color" value="<?php echo htmlspecialchars(json_encode($document['color'])); ?>">
                         <input type="hidden" name="chip" value="<?php echo htmlspecialchars($document['chip']); ?>">

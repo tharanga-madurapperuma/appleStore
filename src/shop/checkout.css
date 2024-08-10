@@ -17,6 +17,10 @@
 	align-items: center;
 }
 
+body::-webkit-scrollbar {
+	display: none;
+}
+
 .checkout-item {
 	display: flex;
 	flex-direction: row;
@@ -25,6 +29,7 @@
 	padding: 50px;
 	margin-bottom: 20px;
 	width: 100%;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 .checkout-item img {
@@ -72,4 +77,8 @@
 
 #item-name {
 	margin-bottom: 20px;
+}
+
+#item-watch {
+	margin-bottom: 30px;
 }

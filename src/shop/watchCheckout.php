@@ -18,49 +18,54 @@
         </div>
         <div class="checkout-content">
             <div class="checkout-item">
-                <img src="" id="item-image" alt="Product Image">
+                <img src="<?php echo htmlspecialchars($_POST['imgSrc']) ?>" id="item-image" alt="Product Image">
                 <div class="checkout-details">
-                    <h2 id="item-watch"></h2>
-                    <p><b>Case: </b><span id="item-case"></span></p>
-                    <p><b>Display: </b><span id="item-display"></span></p>
-                    <p><b>Signal: </b><span id="item-signal"></span></p>
-                    <p><b>Processor: </b><span id="item-processor"></span></p>
-                    <p><b>Buttons: </b><span id="item-buttons"></span></p>
-                    <p><b>Sensor: </b><span id="item-sensor"></span></p>
-                    <p><b>Nitifications: </b><span id="item-notifications"></span></p>
-                    <p><b>Water Resist: </b><span id="item-waterResist"></span></p>
-                    <p><b>LTE: </b><span id="item-lte"></span></p>
-                    <p><b>GPS: </b><span id="item-gps"></span></p>
-                    <p><b>Speaker: </b><span id="item-speaker"></span></p>
-                    <p><b>Capacity: </b><span id="item-capacity"></span></p>
-                    <p class="price">Price: $<span id="item-price"></span>.00</p>
+                    <h2 id="item-watch"><?php echo htmlspecialchars($_POST['watch']) ?></h2>
+                    <p><b>Case: </b><span id="item-case"><?php echo htmlspecialchars($_POST['case']) ?></span></p>
+                    <p><b>Display: </b><span id="item-display"><?php echo htmlspecialchars($_POST['display']) ?></span></p>
+                    <p><b>Signal: </b><span id="item-signal"><?php echo htmlspecialchars($_POST['signal']) ?></span></p>
+                    <p><b>Processor: </b><span id="item-processor"><?php echo htmlspecialchars($_POST['processor']) ?></span></p>
+                    <p><b>Buttons: </b><span id="item-buttons"><?php echo htmlspecialchars($_POST['buttons']) ?></span></p>
+                    <p><b>Sensor: </b><span id="item-sensor"><?php echo htmlspecialchars($_POST['sensor']) ?></span></p>
+                    <p><b>Nitifications: </b><span id="item-notifications"><?php echo htmlspecialchars($_POST['notifications']) ?></span></p>
+                    <p><b>Water Resist: </b><span id="item-waterResist"><?php echo htmlspecialchars($_POST['waterResist']) ?></span></p>
+                    <p><b>LTE: </b><span id="item-lte"><?php echo htmlspecialchars($_POST['lte']) ?></span></p>
+                    <p><b>GPS: </b><span id="item-gps"><?php echo htmlspecialchars($_POST['gps']) ?></span></p>
+                    <p><b>Speaker: </b><span id="item-speaker"><?php echo htmlspecialchars($_POST['speaker']) ?></span></p>
+                    <p><b>Capacity: </b><span id="item-capacity"><?php echo htmlspecialchars($_POST['capacity']) ?></span></p>
+                    <p class="price">Price: $<span id="item-price"><?php echo htmlspecialchars($_POST['price']) ?></span>.00</p>
                 </div>
             </div>
             <div class="checkout-actions">
-                <button class="btn-primary" onclick="paymentGateway()">Confirm Purchase</button>
+                <form action="http://localhost/appleStore-main/src/payment/request.php" method="POST">
+                    <input type="hidden" name="name" value="<?php echo htmlspecialchars($document['iPhone']); ?>">
+                    <input type="hidden" name="imgSrc" value="<?php echo htmlspecialchars($document['imgSrc']); ?>">
+                    <input type="hidden" name="color" value="<?php echo htmlspecialchars(json_encode($document['color'])); ?>">
+                    <input type="hidden" name="chip" value="<?php echo htmlspecialchars($document['chip']); ?>">
+                    <input type="hidden" name="cpu" value="<?php echo htmlspecialchars($document['cpu']); ?>">
+                    <input type="hidden" name="storage" value="<?php echo htmlspecialchars($document['storage']); ?>">
+                    <input type="hidden" name="gpu" value="<?php echo htmlspecialchars($document['gpu']); ?>">
+                    <input type="hidden" name="display" value="<?php echo htmlspecialchars($document['display']); ?>">
+                    <input type="hidden" name="glass" value="<?php echo htmlspecialchars($document['glass']); ?>">
+                    <input type="hidden" name="NeuralEngine" value="<?php echo htmlspecialchars($document['NeuralEngine']); ?>">
+                    <input type="hidden" name="camera" value="<?php echo htmlspecialchars($document['camera']); ?>">
+                    <input type="hidden" name="charginPort" value="<?php echo htmlspecialchars($document['charginPort']); ?>">
+                    <input type="hidden" name="usb" value="<?php echo htmlspecialchars($document['usb']); ?>">
+                    <input type="hidden" name="battery" value="<?php echo htmlspecialchars($document['battery']); ?>">
+                    <input type="hidden" name="security" value="<?php echo htmlspecialchars($document['security']); ?>">
+                    <input type="hidden" name="signal" value="<?php echo htmlspecialchars($document['signal']); ?>">
+                    <input type="hidden" name="price" value="<?php echo htmlspecialchars($document['price']); ?>">
+                    <!-- <input type="hidden" name="amount" value="<?php echo $row['price']; ?>" > -->
+                    <!-- Change values -->
+                    <input type="hidden" name="item_number" value="A2848">
+                    <input type="hidden" name="item_name" value="Apple Watch Series 10">
+                    <input type="hidden" name="amount" value="799">
+                    <!-- <input type="hidden" name="currency_code" value="USD" > -->
+                    <button type="submit" class="btn-primary">Confirm Purchase</button>
+                </form>
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script>
-    <script>
-        // Retrieve data from URL parameters
-        const urlParams = new URLSearchParams(window.location.search);
-        document.getElementById('item-watch').textContent = urlParams.get('watch');
-        document.getElementById('item-image').src = urlParams.get('imgSrc');
-        document.getElementById('item-case').textContent = urlParams.get('case');
-        document.getElementById('item-display').textContent = urlParams.get('display');
-        document.getElementById('item-signal').textContent = urlParams.get('signal');
-        document.getElementById('item-processor').textContent = urlParams.get('processor');
-        document.getElementById('item-buttons').textContent = urlParams.get('buttons');
-        document.getElementById('item-sensor').textContent = urlParams.get('sensor');
-        document.getElementById('item-notifications').textContent = urlParams.get('notifications');
-        document.getElementById('item-waterResist').textContent = urlParams.get('waterResist');
-        document.getElementById('item-lte').textContent = urlParams.get('lte');
-        document.getElementById('item-gps').textContent = urlParams.get('gps');
-        document.getElementById('item-speaker').textContent = urlParams.get('speaker');
-        document.getElementById('item-capacity').textContent = urlParams.get('capacity');
-        document.getElementById('item-price').textContent = urlParams.get('price');
-    </script>
 </body>
 
 </html>

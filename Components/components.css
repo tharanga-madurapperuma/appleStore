@@ -90,6 +90,7 @@
 	justify-content: center;
 	animation: opacity linear forwards infinite;
 	animation-duration: 8s;
+	margin-top: 80px;
 }
 
 .wrapper-bgImage {
@@ -251,7 +252,7 @@
 /* CUSTOM STATUS */
 /* ********************************************* */
 .status-img {
-	height: 80vh;
+	height: 100vh;
 	position: relative;
 	margin: 10px;
 }
@@ -259,7 +260,7 @@
 .status-img img {
 	border-radius: 30px;
 	width: 400px;
-	height: 80vh;
+	height: 90vh;
 	object-fit: cover;
 }
 
@@ -290,7 +291,7 @@
 /* CUSTOM SHOP BACKGROUND */
 /* ********************************************* */
 .wrapper__shopBackground {
-	height: 110vh;
+	height: 115vh;
 	width: 100%;
 	display: flex;
 	justify-content: center;
@@ -316,12 +317,12 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 110vh;
+	height: 115vh;
 	cursor: pointer;
 	background: radial-gradient(
 		circle at var(--x) var(--y),
-		transparent 10%,
-		rgba(0, 0, 0, 0.95) 20%
+		transparent 5%,
+		rgba(0, 0, 0, 0.96) 20%
 	);
 }
 

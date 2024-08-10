@@ -68,7 +68,7 @@ $data = $collection->find();
                         </div>
                     </div>
 
-                    <form action="./iPadCheckout.php" method="GET">
+                    <form action="./iPadCheckout.php" method="POST">
                         <input type="hidden" name="name" value="<?php echo htmlspecialchars($document['iPad']); ?>">
                         <input type="hidden" name="imgSrc" value="<?php echo htmlspecialchars($document['imgSrc']); ?>">
                         <input type="hidden" name="color" value="<?php echo htmlspecialchars(json_encode($document['color'])); ?>">

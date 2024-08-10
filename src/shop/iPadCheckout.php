@@ -18,51 +18,30 @@
         </div>
         <div class="checkout-content">
             <div class="checkout-item">
-                <img src="" id="item-image" alt="Product Image">
+                <img src="<?php echo htmlspecialchars($_POST['imgSrc']) ?>" id="item-image" alt="Product Image">
                 <div class="checkout-details">
-                    <h2 id="item-name"></h2>
-                    <p><b>Chip: </b><span id="item-chip"></span></p>
-                    <p><b>CPU: </b><span id="item-cpu"></span></p>
-                    <p><b>Capacity: </b><span id="item-capacity"></span></p>
-                    <p><b>Display: </b><span id="item-display"></span></p>
-                    <p><b>Camera: </b><span id="item-camera"></span></p>
-                    <p><b>USB: </b><span id="item-usb"></span></p>
-                    <p><b>Security: </b><span id="item-security"></span></p>
-                    <p><b>Speaker: </b><span id="item-speaker"></span></p>
-                    <p><b>Microphone: </b><span id="item-microphone"></span></p>
-                    <p><b>Wi-Fi: </b><span id="item-wifi"></span></p>
-                    <p><b>Height: </b><span id="item-height"></span></p>
-                    <p><b>Width: </b><span id="item-width"></span></p>
-                    <p><b>Weight: </b><span id="item-weight"></span></p>
-                    <p class="price">Price: $<span id="item-price"></span>.00</p>
+                    <h2 id="item-name"><?php echo htmlspecialchars($_POST['name']) ?></h2>
+                    <p><b>Chip: </b><span id="item-chip"><?php echo htmlspecialchars($_POST['chip']) ?></span></p>
+                    <p><b>CPU: </b><span id="item-cpu"><?php echo htmlspecialchars($_POST['cpu']) ?></span></p>
+                    <p><b>Capacity: </b><span id="item-capacity"><?php echo htmlspecialchars($_POST['capacity']) ?></span></p>
+                    <p><b>Display: </b><span id="item-display"><?php echo htmlspecialchars($_POST['display']) ?></span></p>
+                    <p><b>Camera: </b><span id="item-camera"><?php echo htmlspecialchars($_POST['camera']) ?></span></p>
+                    <p><b>USB: </b><span id="item-usb"><?php echo htmlspecialchars($_POST['usb']) ?></span></p>
+                    <p><b>Security: </b><span id="item-security"><?php echo htmlspecialchars($_POST['security']) ?></span></p>
+                    <p><b>Speaker: </b><span id="item-speaker"><?php echo htmlspecialchars($_POST['speaker']) ?></span></p>
+                    <p><b>Microphone: </b><span id="item-microphone"><?php echo htmlspecialchars($_POST['microphone']) ?></span></p>
+                    <p><b>Wi-Fi: </b><span id="item-wifi"><?php echo htmlspecialchars($_POST['wifi']) ?></span></p>
+                    <p><b>Height: </b><span id="item-height"><?php echo htmlspecialchars($_POST['height']) ?></span></p>
+                    <p><b>Width: </b><span id="item-width"><?php echo htmlspecialchars($_POST['width']) ?></span></p>
+                    <p><b>Weight: </b><span id="item-weight"><?php echo htmlspecialchars($_POST['weight']) ?></span></p>
+                    <p class="price">Price: $<span id="item-price"><?php echo htmlspecialchars($_POST['price']) ?></span>.00</p>
                 </div>
             </div>
             <div class="checkout-actions">
-                <button class="btn-primary" onclick="paymentGateway()">Confirm Purchase</button>
+                <button class="btn-primary">Confirm Purchase</button>
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script>
-    <script>
-        // Retrieve data from URL parameters
-        const urlParams = new URLSearchParams(window.location.search);
-        document.getElementById('item-name').textContent = urlParams.get('name');
-        document.getElementById('item-image').src = urlParams.get('imgSrc');
-        document.getElementById('item-chip').textContent = urlParams.get('chip');
-        document.getElementById('item-cpu').textContent = urlParams.get('cpu');
-        document.getElementById('item-capacity').textContent = urlParams.get('capacity');
-        document.getElementById('item-display').textContent = urlParams.get('display');
-        document.getElementById('item-camera').textContent = urlParams.get('camera');
-        document.getElementById('item-usb').textContent = urlParams.get('usb');
-        document.getElementById('item-security').textContent = urlParams.get('security');
-        document.getElementById('item-speaker').textContent = urlParams.get('speaker');
-        document.getElementById('item-microphone').textContent = urlParams.get('microphone');
-        document.getElementById('item-wifi').textContent = urlParams.get('wifi');
-        document.getElementById('item-height').textContent = urlParams.get('height');
-        document.getElementById('item-width').textContent = urlParams.get('width');
-        document.getElementById('item-weight').textContent = urlParams.get('weight');
-        document.getElementById('item-price').textContent = urlParams.get('price');
-    </script>
 </body>
 
 </html>
