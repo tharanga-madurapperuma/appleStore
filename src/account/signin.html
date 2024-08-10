@@ -14,12 +14,15 @@
     <div class="sign__wrapper">
         <custom-nav class="firstSection-navBar"></custom-nav>
         <div class="sign__form">
-            <form action="./account.php" method="POST">
+            <form action="./account.php" method="POST" onsubmit="return loginValidation()">
                 <h2>SIGN IN</h2>
                 <label>Email</label>
-                <input type="email" placeholder="Enter your email here" required="required">    
+                <input id="loginEmail" type="email" placeholder="Enter your email here" required="required" name="email" onblur="return checkEmail(this)">
+                <span id="emailError"></span>
                 <label>Password</label>
-                <input type="password" placeholder="Enter the password" required="required">
+                <input id="password" type="password" placeholder="Enter the password" required="required" name="password" onblur="return checkPassword(this)">
+                <span id="togglePassword" class="toggle-password">🫣 Show Password</span>
+                <span id="passwordError"></span>
                 <div>
                     <a href="signup.html">New here? let's create an account</a>
                     <input type="submit" name="signInBtn" value="Login" class="submitButton"></button>
@@ -29,5 +32,6 @@
     </div>
     <script src="https://kit.fontawesome.com/a79721002c.js" crossorigin="anonymous"></script>
     <script src="../../Components/customNav.js"></script>
+    <script src="./login.js"></script>
 </body>
 </html>

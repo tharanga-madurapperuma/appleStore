@@ -76,9 +76,20 @@ body::-webkit-scrollbar {
 	transition: 0.5s;
 }
 
-input[type="text"]:focus {
+input:focus {
 	outline: 2px solid var(--apple-blue);
 	box-shadow: 0 0 2px var(--apple-blue);
+}
+
+.toggle-password {
+	text-align: right;
+	color: rgb(0, 102, 204) !important;
+	cursor: pointer;
+}
+
+.inputRedFocus:focus {
+	outline: 2px solid rgb(229, 9, 9);
+	box-shadow: 0 0 2px rgb(208, 9, 9);
 }
 
 .sign__form form div {
