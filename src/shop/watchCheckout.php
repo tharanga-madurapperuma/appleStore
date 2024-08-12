@@ -37,7 +37,7 @@
                 </div>
             </div>
             <div class="checkout-actions">
-                <form action="http://localhost/appleStore-main/src/payment/request.php" method="POST">
+                <form action="../payment/request.php" method="POST">
                     <input type="hidden" name="name" value="<?php echo htmlspecialchars($document['iPhone']); ?>">
                     <input type="hidden" name="imgSrc" value="<?php echo htmlspecialchars($document['imgSrc']); ?>">
                     <input type="hidden" name="color" value="<?php echo htmlspecialchars(json_encode($document['color'])); ?>">

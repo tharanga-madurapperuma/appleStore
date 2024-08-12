@@ -18,6 +18,7 @@ $data = $collection->find();
     <link rel="stylesheet" href="../../src/index.css">
     <link rel="stylesheet" href="./shop.css">
     <title>Explore Watch</title>
+    <base target="_blank">
 </head>
 
 <body>

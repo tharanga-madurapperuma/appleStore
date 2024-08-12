@@ -1,4 +1,5 @@
 <?php
+
 use PayPal\Rest\ApiContext;
 use PayPal\Auth\OAuthTokenCredential;
 
@@ -13,8 +14,8 @@ $enableSandbox = true;
 $paypalConfig = [
     'client_id' => 'AVbue3o-uvr2gjtiew-xd-aDyyAKRzhWKBk9MyynXuBqhhWQil4BZJyPlJmmqIoHd_YjuZAe152WW88y',
     'client_secret' => 'EJyH-pcXDFwz2o95rsyMbhTw-WfB8fHREuh-6PNGRcgYYNT6U02Kd7SWiamgwAlEtKmZIHL1Bh4dJjSG',
-    'return_url' => 'http://localhost/appleStore-main/src/payment/response.php',
-    'cancel_url' => 'http://localhost/appleStore-main/src/payment/payment-cancelled.html'
+    'return_url' => 'http://localhost/appleStore/src/payment/response.php',
+    'cancel_url' => 'http://localhost/appleStore/src/payment/payment-cancelled.html'
 ];
 
 // Database settings. Change these for your database configuration.

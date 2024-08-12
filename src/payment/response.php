@@ -1,4 +1,5 @@
 <?php
+
 use PayPal\Api\Payment;
 use PayPal\Api\PaymentExecution;
 
@@ -40,38 +41,60 @@ try {
             'payment_status' => $payment->getState(),
             'invoice_id' => $payment->transactions[0]->invoice_number,
             'product_name' => $payment->transactions[0]->item_list->items[0]->name,
-			'description' => $payment->transactions[0]->description,
+            'description' => $payment->transactions[0]->description,
         ];
 
         if ($data['payment_status'] === 'approved' /* Also it should be checked whether the data is stored successfully inside the databse with an AND operator*/) {
-            $invoiceNo=$data['invoice_id'];
-            $tID=$data['transaction_id'];
-            $pAmount=$data['payment_amount'];
-            $pStatus=$data['payment_status'];
-            $proID=$data['product_id'];
-            $proName=$data['product_name'];
+            $to = "tharanga.sandun.kumara2000@gmail.com";  // The user's email from the POST request
+            $subject = "Payment Confirmation for " . $data['product_name'];
+            $message = "Dear Customer,\n\n"
+                . "Thank you for your purchase. Here are the details of your transaction:\n\n"
+                . "Product Name: " . $data['product_name'] . "\n"
+                . "Amount Paid: $" . $data['payment_amount'] . " " . $data['currency_code'] . "\n"
+                . "Transaction ID: " . $data['transaction_id'] . "\n"
+                . "Invoice Number: " . $data['invoice_id'] . "\n\n"
+                . "If you have any questions, please contact our support team.\n\n"
+                . "Thank you for shopping with us!\n\n"
+                . "Best regards,\nApple Store";
+
+            $headers = "From: no-reply@yourcompany.com\r\n"
+                . "Reply-To: support@yourcompany.com\r\n"
+                . "Content-Type: text/plain; charset=UTF-8\r\n"
+                . "X-Mailer: PHP/" . phpversion();
+
+            // Send email
+            if (mail($to, $subject, $message, $headers)) {
+                echo "<script type='text/javascript'>alert('Payment confirmation email sent successfully.');</script>";
+            } else {
+                echo "<script type='text/javascript'>alert('Failed to send payment confirmation email.');</script>";
+            }
+
+
+            $invoiceNo = $data['invoice_id'];
+            $tID = $data['transaction_id'];
+            $pAmount = $data['payment_amount'];
+            $pStatus = $data['payment_status'];
+            $proID = $data['product_id'];
+            $proName = $data['product_name'];
 
             /*Checking row id (insert_id) of last stored data of relevent table(transaction table) to pass it for the "PaypalSuccess.php" page. This id will be used to retrive and display data at the 
             "PaypalSuccess.php" */
-			//$inserids =$db->insert_id;
+            //$inserids =$db->insert_id;
 
             //Sending data to payment success page (Here PaypalSuccess.php)
-            header("location:http://localhost/appleStore-main/src/payment/paypalSuccess.php?invoiceNo=$invoiceNo&tID=$tID&pAmount=$pAmount&pStatus=$pStatus&proID=$proID&proName=$proName");
+            header("location:http://localhost/appleStore/src/payment/paypalSuccess.php?invoiceNo=$invoiceNo&tID=$tID&pAmount=$pAmount&pStatus=$pStatus&proID=$proID&proName=$proName");
             exit(1);
         } else {
             // Payment failed
-			//header("location:http://localhost/paypal-rest-api/PaypalFailed.php");
+            //header("location:http://localhost/paypal-rest-api/PaypalFailed.php");
             exit(1);
         }
-
     } catch (Exception $e) {
         // Failed to retrieve payment from PayPal
     }
-
 } catch (Exception $e) {
     // Failed to take payment
 }
-
 
 //Add payment to database
 

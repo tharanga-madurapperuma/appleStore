@@ -1,4 +1,5 @@
 <?php
+
 use PayPal\Api\Amount;
 use PayPal\Api\Payer;
 use PayPal\Api\Payment;
@@ -25,21 +26,21 @@ $description = 'Paypal transaction';
 $invoiceNumber = uniqid();
 
 $my_items = array(
-	array('name'=> $product_name, 'quantity'=> $item_qty, 'price'=> $amountPayable, 'sku'=> $item_code, 'currency'=> $currency)
+    array('name' => $product_name, 'quantity' => $item_qty, 'price' => $amountPayable, 'sku' => $item_code, 'currency' => $currency)
 );
-	
+
 $amount = new Amount();
 $amount->setCurrency($currency)
     ->setTotal($amountPayable);
 
 $items = new ItemList();
 $items->setItems($my_items);
-	
+
 $transaction = new Transaction();
 $transaction->setAmount($amount)
     ->setDescription($description)
     ->setInvoiceNumber($invoiceNumber)
-	->setItemList($items);
+    ->setItemList($items);
 
 $redirectUrls = new RedirectUrls();
 $redirectUrls->setReturnUrl($paypalConfig['return_url'])
