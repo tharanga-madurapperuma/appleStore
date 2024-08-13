@@ -87,7 +87,7 @@ $data = $collection->find();
                         <input type="hidden" name="security" value="<?php echo htmlspecialchars($document['security']); ?>">
                         <input type="hidden" name="signal" value="<?php echo htmlspecialchars($document['signal']); ?>">
                         <input type="hidden" name="price" value="<?php echo htmlspecialchars($document['price']); ?>">
-                        <button type="submit" class='shopiPad_buyButton'>Buy</button>
+                        <button type="submit" class='shopiPad_buyButton' onclick="return isLoggedIn()">Buy</button>
                     </form>
                 </div>
             <?php endforeach; ?>
@@ -96,6 +96,16 @@ $data = $collection->find();
 
     <script src="https://kit.fontawesome.com/a79721002c.js" crossorigin="anonymous"></script>
     <script src="../../Components/customNav.js"></script>
+    <script>
+        function isLoggedIn() {
+            if (localStorage.getItem('accountLogged') == 'false') {
+                window.location.href = '../account/signin.html';
+                return false;
+            } else {
+                return true;
+            }
+        }
+    </script>
 </body>
 
 </html>

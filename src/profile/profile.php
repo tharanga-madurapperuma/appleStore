@@ -40,7 +40,7 @@ session_start();
 
         function logout() {
             localStorage.setItem('accountLogged', false);
-            localStorage.setItem('profile_image', "../../assets/users/guestUser.png");
+            localStorage.setItem('profile_image', "../../assets/users/regularUser.png");
             window.location.href = "./logout.php"
         }
     </script>

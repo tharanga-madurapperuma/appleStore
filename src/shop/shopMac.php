@@ -85,7 +85,7 @@ $data = $collection->find();
                         <input type="hidden" name="trackpad" value="<?php echo htmlspecialchars($document['trackpad']); ?>">
                         <input type="hidden" name="powerAdapter" value="<?php echo htmlspecialchars($document['powerAdapter']); ?>">
                         <input type="hidden" name="price" value="<?php echo htmlspecialchars($document['price']); ?>">
-                        <button type="submit" class='shopiPad_buyButton'>Buy</button>
+                        <button type="submit" class='shopiPad_buyButton' onclick="return isLoggedIn()">Buy</button>
                     </form>
                 </div>
             <?php endforeach; ?>
@@ -97,6 +97,16 @@ $data = $collection->find();
     <script>
         function buyItem() {
             window.location.href = "./macCheckout.html";
+        }
+    </script>
+    <script>
+        function isLoggedIn() {
+            if (localStorage.getItem('accountLogged') == 'false') {
+                window.location.href = '../account/signin.html';
+                return false;
+            } else {
+                return true;
+            }
         }
     </script>
 </body>

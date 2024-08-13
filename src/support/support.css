@@ -278,4 +278,60 @@ body::-webkit-scrollbar {
 	.firstSection-image {
 		margin-top: 5.1vh;
 	}
+
+	.support_secondSection h1 {
+		font-size: 3rem;
+	}
+
+	.secondSection-devices img {
+		height: 8vh;
+	}
+
+	.cardSection-cards div {
+		height: 150px;
+		width: 250px;
+	}
+}
+
+@media screen and (max-width: 770px) {
+	.youtube-wrapper {
+		width: 80%;
+	}
+
+	.getSupportLeft,
+	.getSupportRight {
+		/* width: 100%;  */
+		height: auto;
+		margin-bottom: 20px;
+		max-width: 300px;
+	}
+
+	.apple-care-and-trade,
+	.normal-text {
+		width: 80%;
+	}
+
+	.normal-text p {
+		font-size: 0.8rem;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.support_secondSection h1 {
+		font-size: 2rem;
+	}
+
+	.secondSection-devices img {
+		height: 7vh;
+	}
+
+	.cardSection-cards div {
+		height: 120px;
+		width: 200px;
+	}
+
+	.youtube-top h3,
+	.youtube-bottom h3 {
+		font-size: 1.5rem;
+	}
 }

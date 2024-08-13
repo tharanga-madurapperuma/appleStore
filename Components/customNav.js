@@ -1,5 +1,5 @@
 if(localStorage.getItem('profile_image') == null){
-    localStorage.setItem('profile_image', "../../assets/users/guestUser.png");
+    localStorage.setItem('profile_image', "../../assets/users/regularUser.png");
 }
 
 var profileImage = localStorage.getItem('profile_image');
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     if (localStorage.getItem('accountLogged') === null) {
         document.getElementById("userName").innerHTML = "Guest";
         localStorage.setItem('accountLogged', false);
-        profileImage = "../../assets/users/guestUser.png";
+        profileImage = "../../assets/users/regularUser.png";
     }
     else if(localStorage.getItem('accountLogged') == 'true'){
         document.getElementById("userName").innerHTML = localStorage.getItem('first_name');

@@ -125,6 +125,21 @@ STATUS SECTION
 		font-size: 1.5rem;
 		font-weight: 400;
 	}
+
+	.getToKnow-content h1 {
+		font-size: 2.5rem;
+		margin-left: 5%;
+	}
+
+	.getToKnow-status {
+		display: flex;
+		margin: 0px 0 100px 0px;
+		overflow-x: auto;
+	}
+	
+	.getToKnow-status {
+		padding-left: 80px;
+	}
 }
 
 @media screen and (max-width: 480px) {
@@ -141,6 +156,14 @@ STATUS SECTION
 		font-size: 1.2rem;
 		font-weight: 400;
 	}
+	.getToKnow-content h1 {
+		font-size: 2.0rem;
+		margin-left: 5%;
+	}
+
+	.getToKnow-status scroll-status{
+		height:50px;
+	}
 }
 
 @media screen and (max-width: 380px) {
@@ -156,6 +179,18 @@ STATUS SECTION
 	.mac_header-content h4 {
 		font-size: 1rem;
 		font-weight: 400;
+	}
+
+	.getToKnow{
+		font-size: 4px;
+	}
+	.getToKnow-content h1 {
+		font-size: 1.5rem;
+		margin-left: 5%;
+	}
+
+	.getToKnow-status scroll-status{
+		height:20px;	
 	}
 }
 

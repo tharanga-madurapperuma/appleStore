@@ -6,7 +6,7 @@ $DB = getDBConnection();
 $usersCollection = $DB->users;
 
 if (isset($_POST["signUpBtn"])) {
-    $defaultImage = '../../assets/users/guestUser.png';
+    $defaultImage = '../../assets/users/regularUser.png';
     $imagePath = $defaultImage;
 
     if (isset($_FILES["profilePicture"]) && $_FILES["profilePicture"]["error"] == 0) {

@@ -1,4 +1,5 @@
 <?php
+session_start();
 //include_once 'db_connection.php'; 
 // $db_conn = mysqli_connect("localhost", "root", "", "Apple");
 // // Check connection
@@ -30,7 +31,7 @@
             <div class="email-box">
                 <!-- User mail -->
                 <!-- <?php echo htmlspecialchars($email); ?> -->
-                <p>user@gmail.com</p>
+                <p><?php echo htmlspecialchars($_SESSION['email']); ?></p>
             </div>
             <br>
             <div class="payment-details" style="text-align: left;">
