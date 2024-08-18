@@ -36,7 +36,6 @@ function checkFirstName(){
         fName.classList.remove("inputRedFocus");
         return true;
     }
-    
 };
 
 function checkLastName(){
@@ -98,3 +97,5 @@ function checkPhoneNumber(){
         return true;
     }
 }
+
+
